@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package udf_ascii;
+
+service UdfAscii {
+  // 受け取った 2 つの文字列をそのまま 1 行で返す。
+  rpc read_two_strings (TwoStrings) returns (stream TwoStrings);
+}
+
+message TwoStrings {
+  string name_a = 1;
+  string name_b = 2;
+}
